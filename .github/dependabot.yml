@@ -1,0 +1,42 @@
+version: 2
+updates:
+- package-ecosystem: pip
+  directory: "/python"
+  schedule:
+    interval: weekly
+    time: "13:00"
+  open-pull-requests-limit: 10
+  reviewers:
+  - adriangonz
+  ignore:
+  - dependency-name: grpcio-tools
+    versions:
+    - 1.36.1
+  - dependency-name: pandas
+    versions:
+    - 1.2.3
+  - dependency-name: cryptography
+    versions:
+    - 3.4.6
+  - dependency-name: pillow
+    versions:
+    - 8.1.2
+  - dependency-name: grpcio-reflection
+    versions:
+    - 1.36.1
+- package-ecosystem: gomod
+  directory: "/executor"
+  schedule:
+    interval: weekly
+    time: "13:00"
+  open-pull-requests-limit: 10
+  reviewers:
+  - adriangonz
+- package-ecosystem: gomod
+  directory: "/operator"
+  schedule:
+    interval: weekly
+    time: "13:00"
+  open-pull-requests-limit: 10
+  reviewers:
+  - adriangonz
